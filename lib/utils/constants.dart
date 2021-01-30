@@ -12,6 +12,7 @@ class AssetConstants{
   static const BASE_PATH = "assets/images/";
   static const ic_bg = BASE_PATH+"bg.png";
   static const ic_bg_alt = BASE_PATH+"bg_alt.png";
+  static const ic_bunny = BASE_PATH+"bunny.png";
 }
 
 class MyConstants{

@@ -41,7 +41,8 @@ class LineBarWidget extends StatelessWidget {
           child: LinearProgressIndicator(
             minHeight: 15,
             value: barValue,
-            backgroundColor: barColor,
+            backgroundColor: light_grey,
+            valueColor: AlwaysStoppedAnimation(barColor),
           ),
         )
       ],
