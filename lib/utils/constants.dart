@@ -8,6 +8,11 @@ class NetworkConstants{
   static const CONTENT_TYPE = "content-Type";
 }
 
+class AssetConstants{
+  static const BASE_PATH = "assets/images/";
+  static const ic_bg = BASE_PATH+"bg.png";
+}
+
 class MyConstants{
   static const MESSAGE_KEY = "message";
 }
