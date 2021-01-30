@@ -1,6 +1,6 @@
+import 'package:bunny_buddy/ui/features/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'di/dependency_injection.dart';
-import 'ui/features/home/home_page.dart';
 import 'utils/my_colors.dart';
 
 void main() {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Georgia',
 
       ),
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
