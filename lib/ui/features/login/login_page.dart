@@ -1,3 +1,5 @@
+import 'package:bunny_buddy/ui/features/home/home_page.dart';
+import 'package:bunny_buddy/ui/features/signup/signup_page.dart';
 import 'package:bunny_buddy/ui/utils/spacers.dart';
 import 'package:bunny_buddy/ui/widgets/buttons.dart';
 import 'package:bunny_buddy/ui/widgets/text_fields.dart';
@@ -5,6 +7,7 @@ import 'package:bunny_buddy/utils/constants.dart';
 import 'package:bunny_buddy/utils/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
@@ -58,7 +61,7 @@ class LoginPage extends StatelessWidget {
                   RoundedCornerButton(
                     text: "Login",
                     onClick: (){
-
+                      Get.to(HomePage());
                     },
                     textColor: white,
                     backgroundColor: accent,
@@ -67,7 +70,7 @@ class LoginPage extends StatelessWidget {
                   RoundedCornerButton(
                     text: "Signup",
                     onClick: (){
-
+                      Get.to(SignupPage());
                     },
                     textColor: primary_dark,
                     backgroundColor: Colors.transparent,
