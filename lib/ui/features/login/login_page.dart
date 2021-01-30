@@ -18,7 +18,7 @@ class LoginPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 150.h,
+            height: 100.h,
           ),
           Container(
             alignment: Alignment.bottomCenter,
