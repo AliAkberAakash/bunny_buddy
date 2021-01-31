@@ -1,3 +1,6 @@
+import 'package:bunny_buddy/data/repositories/repository_impl.dart';
+import 'package:bunny_buddy/di/dependency_injection.dart';
+import 'package:bunny_buddy/ui/features/journal/write_journal_controller.dart';
 import 'package:bunny_buddy/ui/utils/spacers.dart';
 import 'package:bunny_buddy/ui/widgets/buttons.dart';
 import 'package:bunny_buddy/utils/my_colors.dart';
@@ -5,6 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WriteJournalPage extends StatelessWidget {
+
+  final _controller = WriteJournalController(repository: locator(),);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +33,7 @@ class WriteJournalPage extends StatelessWidget {
                   )
                 ),
                 child: TextField(
+                  controller: _controller.controller,
                   maxLines: null,
                   decoration: InputDecoration(
                       enabledBorder: InputBorder.none,
