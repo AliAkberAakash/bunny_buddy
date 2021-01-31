@@ -1,10 +1,12 @@
 import 'package:bunny_buddy/ui/features/home/widgets/line_bar_widget.dart';
+import 'package:bunny_buddy/ui/features/journal/write_journal_page.dart';
 import 'package:bunny_buddy/ui/utils/spacers.dart';
 import 'package:bunny_buddy/ui/widgets/buttons.dart';
 import 'package:bunny_buddy/utils/constants.dart';
 import 'package:bunny_buddy/utils/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -36,10 +38,10 @@ class HomePage extends StatelessWidget {
             RoundedCornerButton(
               textColor: white,
               backgroundColor: accent,
-              text: "Start Another Session",
+              text: "Write summary of your day",
               borderRadius: 50,
               onClick: (){
-
+                Get.to(WriteJournalPage());
               },
             ),
             Spacer20(),
