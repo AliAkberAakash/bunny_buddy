@@ -1,5 +1,6 @@
-import '../models/message_response.dart';
+import 'package:bunny_buddy/data/models/sentiment_response.dart';
+
 
 abstract class Repository {
-  Future<MessageResponse> getMessage();
+  Future<SentimentResponse> analyzeSentiment(String text);
 }

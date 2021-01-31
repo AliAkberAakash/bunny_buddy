@@ -18,7 +18,7 @@ void setup() {
   locator.registerSingleton(DioFactory());
   locator.registerSingleton(ApiBaseHelper(dioFactory: locator()));
   locator.registerSingleton(RestService(helper: locator()));
-  locator.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl(service: locator()));
+  locator.registerLazySingleton<RemoteDataSource>(() => RemoteDataSourceImpl(helper: locator()));
   locator.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl());
   locator.registerFactory<NetworkInfo>(() => NetworkInfoImpl(DataConnectionChecker()));
   locator.registerLazySingleton<Repository>(() => RepositoryImpl(

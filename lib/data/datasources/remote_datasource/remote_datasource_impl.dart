@@ -1,21 +1,26 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
+import 'package:bunny_buddy/core/network/api_base_helper.dart';
+import 'package:bunny_buddy/data/models/sentiment_response.dart';
+import 'package:bunny_buddy/utils/constants.dart';
 import 'remote_datasource.dart';
-import 'rest_service.dart';
 import '../../models/message_response.dart';
 
 class RemoteDataSourceImpl extends RemoteDataSource{
 
-  final RestService service;
+  final ApiBaseHelper helper;
 
-  RemoteDataSourceImpl({@required this.service});
+  RemoteDataSourceImpl({this.helper});
 
   @override
-  Future<MessageResponse> getMessage() async{
-    var response = await service.getMessage();
+  Future<SentimentResponse> analyzeSentiment(String text) async{
+    var response = await helper.post(
+      NetworkConstants.analyze_sentiment, {
+        "text":text,
+        "api_key":DefaultValue.API_KEY
+    });
 
-    return MessageResponse.fromJson(jsonDecode(response.data));
+    return SentimentResponse.fromJson(jsonDecode(response.data));
 
   }
 

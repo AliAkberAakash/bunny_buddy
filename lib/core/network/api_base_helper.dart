@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:bunny_buddy/utils/shared_pref_utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import '../failure/exceptions/network_exception.dart';
@@ -18,6 +19,21 @@ class ApiBaseHelper{
     try {
       // make the network call
       final response = await dioFactory.getDio().get(NetworkConstants.BASE_URL+endUrl);
+      //return the response
+      return _returnResponse(response);
+    } on SocketException {
+      throw FetchDataException('No Internet connection');
+    }
+  }
+
+  Future<Response> post(String endUrl, Map<String, dynamic> body) async {
+
+    try {
+      // make the network call
+      final response = await dioFactory.getDio().post(
+        NetworkConstants.BASE_URL+endUrl,
+        data: body,
+      );
       //return the response
       return _returnResponse(response);
     } on SocketException {

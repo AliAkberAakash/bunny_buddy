@@ -1,3 +1,4 @@
+import 'package:bunny_buddy/data/models/sentiment_response.dart';
 import 'package:flutter/cupertino.dart';
 import '../../core/network/network_info.dart';
 import '../datasources/local_datasource/local_datasource.dart';
@@ -15,14 +16,11 @@ class RepositoryImpl extends Repository{
 
 
   @override
-  Future<MessageResponse> getMessage() async{
+  Future<SentimentResponse> analyzeSentiment(String text) async{
     if(await networkInfo.isConnected) {
-      final response = await remoteDataSource.getMessage();
-      if (response.success) {
-        localDataSource.setMessageResponse(response); //if there is data then store it in db
-      }
+      final response = await remoteDataSource.analyzeSentiment(text);
+      return response;
     }
-    return localDataSource.getMessageResponse(); // always return local data
   }
   
 }
