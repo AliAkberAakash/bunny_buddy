@@ -45,39 +45,44 @@ class LoginPage extends StatelessWidget {
               ),
               width: double.infinity,
               color: white,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  UnderlinedTextField(
-                    hintText: "email",
-                    controller: null,
-                  ),
-                  Spacer20(),
-                  UnderlinedTextField(
-                    hintText: "password",
-                    controller: null,
-                  ),
-                  Spacer20(),
-                  RoundedCornerButton(
-                    text: "Login",
-                    onClick: (){
-                      Get.to(HomePage());
-                    },
-                    textColor: white,
-                    backgroundColor: accent,
-                    borderRadius: 100,
-                  ),
-                  RoundedCornerButton(
-                    text: "Signup",
-                    onClick: (){
-                      Get.to(SignupPage());
-                    },
-                    textColor: primary_dark,
-                    backgroundColor: Colors.transparent,
-                    elevation: 0,
-                  ),
+              child: Center(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      UnderlinedTextField(
+                        hintText: "email",
+                        controller: null,
+                      ),
+                      Spacer20(),
+                      UnderlinedTextField(
+                        obsecure: true,
+                        hintText: "password",
+                        controller: null,
+                      ),
+                      Spacer20(),
+                      RoundedCornerButton(
+                        text: "Login",
+                        onClick: (){
+                          Get.to(HomePage());
+                        },
+                        textColor: white,
+                        backgroundColor: accent,
+                        borderRadius: 100,
+                      ),
+                      RoundedCornerButton(
+                        text: "Signup",
+                        onClick: (){
+                          Get.to(SignupPage());
+                        },
+                        textColor: primary_dark,
+                        backgroundColor: Colors.transparent,
+                        elevation: 0,
+                      ),
 
-                ],
+                    ],
+                  ),
+                ),
               ),
             ),
           )
