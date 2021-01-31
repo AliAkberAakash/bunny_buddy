@@ -55,7 +55,7 @@ class WriteJournalPage extends StatelessWidget {
               text: "SAVE",
               borderRadius: 50,
               onClick: (){
-
+                _controller.getSentiment();
               },
             ),
           ],
